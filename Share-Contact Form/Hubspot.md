@@ -9,5 +9,5 @@ The Hubspot integration currently allows to reveive events from the "Share-Conta
         crm.objects.contacts.write
         crm.objects.owners.read
         ```
-    2. Add the following Logo: [contactify_icon.jpg.zip](contactify_icon.jpg.zip)
+    2. Add the following Logo: [assets/contactify_icon.jpg.zip](contactify_icon.jpg.zip)
 2. Send us the API Key through some secure means.
