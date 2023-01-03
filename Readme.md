@@ -2,4 +2,6 @@
 
 Currently we provide the following Documentation here:
 
-- [Contactify CRM Webhook](Contactify%20CRM%20Webhook.md)
+- Share-Contact Form integrations
+    - [Contactify CRM Webhook](Share-Contact%20Form/Contactify%20CRM%20Webhook.md)
+    - [Hubspot](Share-Contact%20Form/Hubspot.md)
