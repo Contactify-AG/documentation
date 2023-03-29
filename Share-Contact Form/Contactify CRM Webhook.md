@@ -18,7 +18,7 @@ position | string | Yes |
 company | string | Yes |
 message | string | Yes | May be multiline
 timestamp | ISO-8601 timestamp, no fractional seconds | No |
-lead_email | string | No | Email of the User, whose digital business card was shown
+lead_email | string | Yes | Email of the user, whose digital business card was shown. Can be null if user was deleted, and contact is edited by Admin User.
 event_type | string | No | either "create" or "update". However we do not deduplicate contacts. An udpate event event can occur when a user updates a contact in the User portal, however this only applies, if we still store the data in our database.
 birthday | string | Yes | This is just a freetext field and can contain any string.
 address | string | Yes |
