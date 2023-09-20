@@ -30,3 +30,10 @@ With the Azure Graph API integration, users can be automatically managed: that m
 
     All the users in the admins group should be members of the platform users group
 9. Provide the group ids to Contactify.
+
+## Role Management
+The Azure Graph API Sync API allows for managing Roles directly in Azure with a dedicated Admin Group. Users in that group become Tenant Administrators in Contactify. A user can only ever have one Role.
+
+Please note that all admins also need to be part of the user group.
+
+> :warning: The Company Administrator role is not currently supported via Azure Graph API Sync. If you need to manage Company Administrators, please contact us.
