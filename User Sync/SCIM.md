@@ -13,24 +13,25 @@ With SCIM, users can be automatically managed: that means created (incl. contact
     <img src="assets/scim-step-6.png" style="max-width: 750px; border: 1px solid #ccc!important; padding: 5px; border-radius: 4px;" />
 7. Set up similar to the following, mapping the fields you need. The full spec of attributes can be found here: https://scim-api.stage.contactify.biz/api/scim/Schemas  
     <img src="assets/scim-step-7.png" style="max-width: 750px; border: 1px solid #ccc!important; padding: 5px; border-radius: 4px;" />  
-    Azure Active Directory Attribute | customappsso Attribute
-    --- | ---
-    userPrincipalName | userName
-    Switch([IsSoftDeleted],, "False", "True", "True", "False") | active
-    jobTitle | title
-    mail | emails[type eq "work"].value
-    givenName | name.givenName
-    surname | name.familyName
-    streetAddress | addresses[type eq "work"].streetAddress
-    city | addresses[type eq "work"].locality
-    postalCode | addresses[type eq "work"].postalCode
-    telephoneNumber | phoneNumbers[type eq "work"].value
-    mobile | phoneNumbers[type eq "mobile"].value
-    SingleAppRoleAssignment([appRoleAssignments]) | roles[primary eq "True"].value
-    department | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department
-    True | urn:ietf:params:scim:schemas:extension:contactify:2.0:User:orderCard
+    Azure Active Directory Attribute | customappsso Attribute | Matching precedence
+    --- | ---| ---
+    userPrincipalName | externalId | 1
+    mail | userName |
+    Switch([IsSoftDeleted],, "False", "True", "True", "False") | active |
+    jobTitle | title |
+    mail | emails[type eq "work"].value |
+    givenName | name.givenName |
+    surname | name.familyName |
+    streetAddress | addresses[type eq "work"].streetAddress |
+    city | addresses[type eq "work"].locality |
+    postalCode | addresses[type eq "work"].postalCode |
+    telephoneNumber | phoneNumbers[type eq "work"].value |
+    mobile | phoneNumbers[type eq "mobile"].value |
+    SingleAppRoleAssignment([appRoleAssignments]) | roles[primary eq "True"].value |
+    department | urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department |
+    True | urn:ietf:params:scim:schemas:extension:contactify:2.0:User:orderCard |
 
-    The only required field is actually `userName`. All other fields are optional.
+    The only field required on Contatify side is actually `userName`. All other fields are optional. If you use the recommended mapping listed above, `externalId` is required too, in order for Azure to be able to map the users.
 
     If you want to manage Roles (`SingleAppRoleAssignment([appRoleAssignments])`) via SCIM, please check the section below.
 
@@ -45,9 +46,6 @@ With SCIM, users can be automatically managed: that means created (incl. contact
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:externalCompanyId |String | No | No | No | No | ReadWrite | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:orderCard | Boolean | No | No | No | No | immutable | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:deliverCardToHeadquarters | Boolean | No | No | No | No | ReadWrite | - | -
-
-If you need to match users on a different attribute than `userName`, follow this instructions: https://learn.microsoft.com/en-us/azure/active-directory/app-provisioning/customize-application-attributes#matching-users-in-the-source-and-target--systems  
-Please note the supported filters of our SCIM API, documented in the swagger.
 
 ## Authentication
 
