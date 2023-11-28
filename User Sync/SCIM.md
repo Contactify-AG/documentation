@@ -50,7 +50,8 @@ With SCIM, users can be automatically managed: that means created (incl. contact
 
 ### Sync Regularity
 
-Check Microsofts doc: https://learn.microsoft.com/en-us/entra/identity/app-provisioning/how-provisioning-works#provisioning-cycles-initial-and-incremental
+Check Microsofts doc: https://learn.microsoft.com/en-us/entra/identity/app-provisioning/how-provisioning-works#provisioning-cycles-initial-and-incremental  
+Als here: https://learn.microsoft.com/en-us/azure/databricks/administration-guide/users-groups/scim/aad#provisioning-tips
 
 ## Authentication
 
