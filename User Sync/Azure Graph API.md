@@ -36,4 +36,5 @@ The Azure Graph API Sync API allows for managing Roles directly in Azure with a 
 
 Please note that all admins also need to be part of the user group.
 
-> :warning: The Company Administrator role is not currently supported via Azure Graph API Sync. If you need to manage Company Administrators, please contact us.
+> [!WARNING]
+> The Company Administrator role is not currently supported via Azure Graph API Sync. If you need to manage Company Administrators, please contact us.
