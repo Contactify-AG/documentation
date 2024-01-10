@@ -67,8 +67,6 @@ Once you configure SCIM to manage Roles, you can no longer manage them via the C
 
 Display Name | Value | Description | Corresponding Role in Contactify
 --- | --- | --- | ---
-Admin | Admin | Tenant admins have the ability to edit all companies and their users data of a tenant. | Tenant Administrator
+Tenant Admin | Admin | Tenant admins have the ability to edit all companies and data of all users in those companies. | Tenant Administrator
+Company Admin | CompanyAdmin | Company admins have the ability to edit their own company and all users in that company. | Company Administrator
 User | User | A Company User has access to his own data, but can't manage any company data. | Company User
-
-> [!WARNING]
-> The Company Administrator role is not currently supported via SCIM. If you need to manage Company Administrators, please contact us.
