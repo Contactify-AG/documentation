@@ -43,8 +43,8 @@ With SCIM, users can be automatically managed: that means created (incl. contact
     Attribute | Type | Primary Key | Required | Multi-Value | Exact Case | Muatbility | Api Expression | Referenced Object Attribtue
     --- | --- | --- | --- | --- | --- | --- | --- | ---
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:uid | String | No | No | No | Yes | ReadWrite | - | -
-    urn:ietf:params:scim:schemas:extension:contactify:2.0:User:externalCompanyId |String | No | No | No | No | ReadWrite | - | -
-    urn:ietf:params:scim:schemas:extension:contactify:2.0:User:externalOfficeId |String | No | No | No | No | ReadWrite | - | -
+    urn:ietf:params:scim:schemas:extension:contactify:2.0:User:externalCompanyId |String | No | No | No | Yes | ReadWrite | - | -
+    urn:ietf:params:scim:schemas:extension:contactify:2.0:User:externalOfficeId |String | No | No | No | Yes | ReadWrite | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:orderCard | Boolean | No | No | No | No | immutable | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:deliverCardToHeadquarters | Boolean | No | No | No | No | immutable | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:sendWelcomeEmail | Boolean | No | No | No | No | immutable | - | -
