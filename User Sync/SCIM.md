@@ -48,6 +48,11 @@ With SCIM, users can be automatically managed: that means created (incl. contact
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:orderCard | Boolean | No | No | No | No | immutable | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:deliverCardToHeadquarters | Boolean | No | No | No | No | immutable | - | -
     urn:ietf:params:scim:schemas:extension:contactify:2.0:User:sendWelcomeEmail | Boolean | No | No | No | No | immutable | - | -
+    photos[type eq "photo"].value | string | No | No | No | No | - | - | -
+
+### Photo Sync
+
+Profile pictures are synchronized through the `photos` attribute, a multi-valued field where the significant property for synchronization is the one with its type set to "photo". The required value for this property is an externally accessible URI pointing to a photo. To update a profile picture, simply replace the URI with the new photo's accessible URI.
 
 ### Sync Regularity
 
